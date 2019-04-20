@@ -1,6 +1,6 @@
 <?php
 
-$your_email = "example@example.com";
+$your_email = "buenviento@gmx.es";
 
 $headers= "From: ".$_POST['name']." <".$_POST['email'].">\r\n";
 $headers.='Content-type: text/html; charset=utf-8';
