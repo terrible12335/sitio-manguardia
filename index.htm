@@ -1,32 +1,25 @@
-		
-		<!DOCTYPE html>
-<html lang="es-CL" prefix="og: http://ogp.me/ns#">
-<head>
-<meta charset="UTF-8" />				
-		<article class="post-listing post post-29 page type-page status-publish hentry">
-						<div class="post-inner">
-				<h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing"><span itemprop="name">CONTÁCTENOS</span></h1>
-				<p class="post-meta"></p>
-				<div class="clear"></div>
-				<div class="entry">
-					
-					<p><strong>wevadas:</strong></p>
-<p><strong>Mail: </strong><a href="mailto:manguardia@protonmail.com">manguardia@protonmail.com</a></p>
-<p><strong>Fono:  &#8211; </strong></p>
-
-<div class="screen-reader-response"></div>
-
-
-</div>
-<p><label> Tu Nombre (requerido)<br />
-    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" 
-<p><label> Tu Correo (requerido)<br />
-    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" 
-    <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" 
-<p><label> Tu Mensaje<br />
-    <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10"
-<p><input type="submit" value="Enviar" 
-
-</body>
-</html>
-										
+<?php
+// Guardar los datos recibidos en variables:
+$nombre = $_POST['nombre'];
+$email = $_POST['email'];
+$asunto = $_POST['asunto'];
+$mensaje = $_POST['mensaje'];
+// Definir la dirección de destino:
+$dest = "manguardia@protonmail.com"; 
+ 
+// Estas son cabeceras que se usan para evitar que el correo llegue a SPAM:
+$headers = "From: $nombre $email\r\n";
+$headers .= "X-Mailer: PHP5\n";
+$headers .= 'MIME-Version: 1.0' . "\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+// Aqui definimos el asunto y armamos el cuerpo del mensaje
+$cuerpo = "Nombre: ".$nombre."<br>";
+$cuerpo .= "Email: ".$email."<br>";
+$cuerpo .= "Asunto: ".$asunto."<br>";
+$cuerpo .= "Mensaje: ".$mensaje;
+// Esta es una pequena validación, que solo envie el correo si todas las variables tiene algo de contenido:
+if($nombre != '' && $email != '' && $asunto != '' && $mensaje != ''){
+    mail($dest,$asunto,$cuerpo,$headers); //ENVIAR!
+}
+?>
