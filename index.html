@@ -325,7 +325,6 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
         var actual = 0;
         setInterval(function(){
           actual = actual + 1;
-          $('.'+nombre +' img:first-child').fadeOut(desaparecer);
           $('.'+ nombre +' img:nth-child('+ actual +')').fadeOut(desaparecer);
           $('.'+ nombre +' img:nth-child('+ actual +')').next().fadeIn(aparecer);
         },velocidad * 1000);
