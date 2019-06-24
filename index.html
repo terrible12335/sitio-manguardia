@@ -313,7 +313,7 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
       // Nombre de la clase del slider
       var nombre = "cctwslide";
       // Velocidad de transición entre cada imagen (en segundos)
-      var velocidad = 2;
+      var velocidad = 3;
       // Velocidad a la que desaparecerá la imagen (slow / medium / fast)
       var desaparecer = "fast";
       // Velocidad a la que aparecerá la siguiente imagen (slow / medium / fast)
@@ -325,8 +325,9 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
         var actual = 0;
         setInterval(function(){
           actual = actual + 1;
-          $('.'+ nombre +' img:nth-child('+ actual +')').fadeOut(desaparecer);
-          $('.'+ nombre +' img:nth-child('+ actual +')').next().fadeIn(aparecer);
+          $(' img:nth-child('+ actual +')').fadeOut(desaparecer);
+          $(' img:first-child').fadeOut(desaparecer);
+          $(' img:nth-child('+ actual +')').next().fadeIn(aparecer);
         },velocidad * 1000);
       }
       
