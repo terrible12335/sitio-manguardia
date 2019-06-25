@@ -316,7 +316,6 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
         <li data-target="#myCarousel" data-slide-to="4"></li>
 	<li data-target="#myCarousel" data-slide-to="5"></li>
 	<li data-target="#myCarousel" data-slide-to="6"></li>
-	<li data-target="#myCarousel" data-slide-to="7"></li>
       </ol>
       <!-- diapositivas -->
       <div class="carousel-inner">
@@ -363,18 +362,19 @@ if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
         </div>
       </div>    
 	 
-      <!-- botones de desplazamiento a izquierda y derecha -->      
-      <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel1" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+       <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
-    
-    </div>
+</div>
+ 
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.myCarousel').carousel()
+    });
+</script>
     
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
